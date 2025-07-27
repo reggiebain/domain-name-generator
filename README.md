@@ -16,6 +16,9 @@ Author: Reggie Bain
 • LLM judge validation: How you ensured evaluation quality
 #### Hyperparameter Search
 - Due to Kaggle free tier constraints on RAM and output file sizes, we search by hand thorugh some hyperparameters.
+    - learning_rates = [5e-5, 2e-4, 1e-3]
+    - batch_sizes = [2, 4]
+
 ## 4. Model Comparison & Recommendations
 • Performance comparison: Statistical significance of improvements
 • Production readiness: Which version you'd deploy and why
