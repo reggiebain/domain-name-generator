@@ -20,3 +20,15 @@ Author: Reggie Bain
 • Performance comparison: Statistical significance of improvements
 • Production readiness: Which version you'd deploy and why
 • Future improvements: Next steps for continued improvement
+
+## 5. API Deployment
+#### Tips for Use
+```
+make train     # fine-tune the model
+make eval      # evaluate with BLEU, ROUGE, etc.
+make serve     # start the FastAPI server
+make test      # run edge case test script
+make api_call  # test with curl
+make clean     # remove cache/logs
+
+```
