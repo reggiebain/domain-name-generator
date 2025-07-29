@@ -1,5 +1,10 @@
 fastapi
 uvicorn
-transformers
-torch
 requests
+transformers>=4.36.0
+peft>=0.8.0
+torch
+sentencepiece>=0.1.99
+safetensors
+accelerate
+python-dotenv

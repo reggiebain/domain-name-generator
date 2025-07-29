@@ -1,8 +1,38 @@
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import AutoModelForCausalLM, AutoTokenizer, LlamaTokenizer, LlamaForCausalLM
+from peft import PeftModel, PeftConfig
+import os
+from dotenv import load_dotenv
+import torch
 
 def load_model_and_tokenizer():
-    model_path = 'models/fine-tuned-llama-domain-generator'
-    model = AutoModelForCausalLM.from_pretrained(model_path)
-    tokenizer = AutoTokenizer.from_pretrained(model_path)
-    tokenizer.pad_token = tokenizer.eos_token
+    model_path = 'models/llama-base'
+    adapter_path = "models/fine-tune-llama-lora"
+
+    # Load tokenizer from base
+    #tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
+    #tokenizer.pad_token = tokenizer.eos_token
+
+    # Load base model
+    #base_model = AutoModelForCausalLM.from_pretrained(model_path,trust_remote_code=True)
+
+
+    load_dotenv()  # Loads variables from .env into environment
+
+    hf_token = os.getenv("HF_TOKEN")
+
+    base_model = AutoModelForCausalLM.from_pretrained(
+        "meta-llama/Llama-3.2-1B-Instruct",
+        trust_remote_code=True,
+        use_auth_token=hf_token,
+        device_map="auto",
+        torch_dtype=torch.float16,
+    )
+
+    tokenizer = AutoTokenizer.from_pretrained(
+        "meta-llama/Llama-3.2-1B-Instruct", 
+        trust_remote_code=True,
+        use_auth_token=hf_token)
+    # Load LoRA adapter
+    model = PeftModel.from_pretrained(base_model, adapter_path)
+
     return model, tokenizer
