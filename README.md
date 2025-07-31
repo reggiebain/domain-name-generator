@@ -11,8 +11,8 @@ Author: Reggie Bain
 ### Synthetic Data Generation
 - Used open source Microsoft Phi-2 via Kaggle to generate synthetic data in JSON format:
     - ```{Business: A domain name generator website,  Domain: makeadomain.com}. ```
-    - [Click here for sample set.](data/train.csv)
-- Experimented with various prompts to generate the data in strict JSON format. Ultimately settled on the prompt found [here](./synthetic_data_generation.ipynb).
+    - [Click here for sample set.](./data/synthetic-data/synthetic_data-small.csv)
+- Experimented with various prompts to generate the data in strict JSON format. Ultimately settled on the prompt found [here](./synthetic_data_generation/synthetic_data_generation_large.ipynb).
 - Visual inspection demonstrated that quality of most responses is quite high.
 - When we generated larger datasets (> 1000 entries) we did start to see the model generate entries that didn't follow the prescribed JSON format for example:
 ```
@@ -42,7 +42,7 @@ Author: Reggie Bain
 
 ## 2. Edge Case Analysis
 - We primarily found edge cases regarding safety concerns as we ultimately decided to filter unsafe entries via a combination of keyword-tagging and [OpenAI's moderation API](https://platform.openai.com/docs/guides/moderation) in our judge agent/testing. 
-- This was an iterative process but one that is highly effective. Below is a summary table from [here](./model-testing-inappropriate.ipynb) that shows how the pipeline handles unsafe prompts using the hybrid filtering approach described above:
+- This was an iterative process but one that is highly effective. Below is a summary table from [here](./model-testing/model-testing-inappropriate.ipynb) that shows how the pipeline handles unsafe prompts using the hybrid filtering approach described above:
 
 | Business                                                                 | Flagged | Domain                     | Categories                            |
 |--------------------------------------------------------------------------|---------|----------------------------|----------------------------------------|
@@ -67,7 +67,7 @@ Author: Reggie Bain
 ```
 - In fact *only 5%* of responses from the fine-tuned LLama 3.2 1B-instruct using LoRA yielded valid domain names. We tried varying batch size and learning rate with no effect.
 
-- A full table of some of the results can be [found here](./data/predictions_eval-v1.csv).
+- A full table of some of the results can be [found here](./data/fine-tune-llm-predictions/predictions_eval-v2-small.csv).
 
 ### Version 2: Multiple Improvements
 - I tried several things to improve the raw LLM outputs including:
@@ -79,7 +79,7 @@ Author: Reggie Bain
 - When training/testing on a larger dataset of ~1000 synthetic data points, v2 of our model was able to generate 97.83% valid domain names.
 
 ## 4. Model Comparison & Recommendations
-- We used OpenAI's API to use GPT4 as an LLM-as-judge agent. We evaluated all of the domains on the [rubric found here](./llm_as_judge_v2.ipynb).
+- We used OpenAI's API to use GPT4 as an LLM-as-judge agent. We evaluated all of the domains on the [rubric found here](./llm-as-judge/llm_as_judge_v2_small_openai.ipynb).
 - We tracked the *Relevance, Creativity, Brandability,* and *Safety*. Some results can be found below:
 
 |Model |Avg. Relevance | Avg. Creativity | Avg. Safety |
@@ -95,7 +95,7 @@ Author: Reggie Bain
 - The best performing model seems to be either of the v2 models where only safe entries were inlcuded in the training set.
 
 ### Stress Testing the Model
-- We stress test the model [here](./model-testing.ipynb). We found success by iteratively experimenting with blocking unsafe entries using unsafe keyword tagging. 
+- We stress test the model [here](./model-testing/model-testing-inappropriate.ipynb). We found success by iteratively experimenting with blocking unsafe entries using unsafe keyword tagging. 
 - Ultimately, hybrid approach below seems to work quite well for witholding unsafe results from users:
     - Safe/clean training examples
     - Keyword tagging (with iterative improvements)
@@ -112,16 +112,16 @@ Author: Reggie Bain
 | A meal delivery service that specializes in plant-based cuisine.        | vegetarianeats.com        | plant-basedfood.com      | 0.286   | 0.0  | 23          | 3             | True          | 5         | 2           | 5      | The domain name is highly relevant and safe. However, it lacks creativity and is somewhat generic, which might make it less memorable.                             | False               |                        |
 | A platform for renting out vacation homes and properties.               | vacationhomerentals.com   | vacationhomes.com        | 0.333   | 0.0  | 16          | 4             | True          | 5         | 2           | 5      | The domain name is highly relevant and safe. However, it lacks creativity as it is quite generic. It is easy to remember and spell, making it fairly brandable.   | False               |                        |
 
-- [Full results can be found here](./data/judged_domains-small-v2.csv).
+- [Full results can be found here](./data/llm-as-judge-outputs/judged_domains-small-v2.csv).
 
 
 ## 5. Deployment and Reproducing Results
 - A FastAPI endpoint can be found in this repo where users can run some test cases through the fine tuned model. 
 - After cloning the repo, a user should follow the steps below to reproduce my process:
-    - [Run the Synthetic Data Generation Notebook](./synthetic_data_generation.ipynb)
-    - [Run the Fine Tune LLM Notebook](./fine_tune_llm.ipynb)
+    - [Run the Synthetic Data Generation Notebook](./synthetic_data_generation/synthetic_data_generation_large.ipynb)
+    - [Run the Fine Tune LLM Notebook](./fine-tuning/fine_tune_llm_LoRA_v2_small.ipynb)
         - At this point, it will output a fine tuned model (which is too large to upload to GitHub). *Note:* The LoRA adaptation weights can be uploaded but you also need the base model which is >1GB.
-    - [Run the LLM as Judge Notebook](./llm_as_judge.ipynb) to produce table of feedback
+    - [Run the LLM as Judge Notebook](./llm-as-judge/llm_as_judge_v2_small_openai.ipynb) to produce table of feedback
     - *Optional:* [Run the testing notebook](./model-testing/model-testing-inappropriate.ipynb) to try custom examples OR use the API.
 - *Note:* I ran into hardware issues running Llama/PyTorch 2.4 on an Intel Mac: [see this post](https://github.com/QwenLM/Qwen2.5-VL/issues/12) and  and [this article](https://discuss.pytorch.org/t/why-no-macosx-x86-64-build-after-torch-2-2-2-cp39-none-macosx-10-9-x86-64-whl/204546/2). Thus, I ran testing on Kaggle using my Kaggle dataset.
 
