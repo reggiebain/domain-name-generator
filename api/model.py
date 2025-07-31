@@ -5,16 +5,8 @@ from dotenv import load_dotenv
 import torch
 
 def load_model_and_tokenizer():
-    model_path = 'models/llama-base'
+
     adapter_path = "models/fine-tune-llama-lora"
-
-    # Load tokenizer from base
-    #tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
-    #tokenizer.pad_token = tokenizer.eos_token
-
-    # Load base model
-    #base_model = AutoModelForCausalLM.from_pretrained(model_path,trust_remote_code=True)
-
 
     load_dotenv()  # Loads variables from .env into environment
 
