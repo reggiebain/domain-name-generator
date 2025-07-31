@@ -1,0 +1,47 @@
+description,true,pred,rougeL,bleu,levenshtein,brandability,is_valid_domain
+"A subscription model for monthly deliveries of fresh, organic produce.",farm2fridge.com,freshharvest.com,0.5,0.1495348781221221,10,0.4,True
+A subscription box that delivers healthy and natural snacks to your doorstep.,snackbox.com,healthysnacksbox.com,0.5,0.1495348781221221,8,0.4,True
+A home cleaning service that uses natural and eco-friendly products.,cleanhome.com,greenclean.com,0.5,0.1495348781221221,8,0.7,True
+A personalized online coaching service for small business owners.,smbcoach.io,businesscoach.com,0.0,0.0,9,0.4,True
+A digital subscription service for eco-friendly home and garden products.,earthybudgets.com,earthyhome.com,0.5,0.1495348781221221,6,0.7,True
+A personalized nutrition coaching service for busy professionals.,nutrilife.co,nutritioncoaching.com,0.0,0.0,12,0.4,True
+"A personalized meal delivery service that offers healthy, organic meals for families.",wholesomehome.com,mealtime.org,0.0,0.0,13,0.7,True
+"An online store that sells handmade, eco-friendly clothing and accessories.",handmadeverse.com,earthyhabits.com,0.5,0.1495348781221221,11,0.4,True
+A platform for booking local home cleaning services.,homeclean.com,homecleaning.com,1.0,0.1495348781221221,3,0.4,True
+A website that connects pet owners with local dog walkers.,pawslive.com,petwalkers.com,0.5,0.1495348781221221,7,0.7,True
+A website that allows people to rent out their spare rooms to travelers.,homeaway.com,staywithus.com,0.5,0.1495348781221221,10,0.7,True
+A renewable energy company that installs solar panels and other energy-efficient products for homes and businesses.,energize.com,renewableenergy.com,0.5,0.1495348781221221,11,0.4,True
+A platform for renting out unused storage space.,unusedstorage.com,storage-space.com,0.4,0.1495348781221221,11,0.4,True
+A startup that creates sustainable clothing for fashion enthusiasts.,ecofashion.com,stylehive.com,0.5,0.1495348781221221,8,0.7,True
+A website that connects pet owners with local pet sitters.,petcare.com,pet-sitters.com,0.4,0.1495348781221221,7,0.7,True
+A platform for connecting pet owners with local pet sitters.,pawlovers.com,pet-sitters.com,0.4,0.1495348781221221,7,0.7,True
+A virtual reality platform for immersive travel experiences.,travelvr.com,travel-vr.com,0.4,0.1495348781221221,1,0.7,True
+A virtual fitness platform for people to workout at home.,homefitness.com,fithome.com,0.5,0.1495348781221221,8,0.7,True
+A personalized meal delivery service for busy professionals.,mealjoy.com,mealbox.com,0.5,0.1495348781221221,2,0.7,True
+A mobile app that helps people find local farmers markets.,freshfinds.app,farmersmarketfinder.com,0.0,0.0,14,0.4,True
+A service that connects pet owners with local dog walkers and pet sitters.,pawprint.com,dogwalkers.com,0.5,0.1495348781221221,9,0.7,True
+A platform for handmade jewelry that donates a portion of proceeds to charity.,artistryforgood.com,handmadecharity.com,0.5,0.1495348781221221,14,0.4,True
+A platform that connects freelance graphic designers with clients in need of creative services.,designitup.com,designhub.com,0.5,0.1495348781221221,3,0.7,True
+"A subscription box service for locally sourced, artisanal snacks.",farmfreshsnacks.com,Snackbox.com,0.5,0.1495348781221221,13,0.7,True
+A platform for connecting freelance writers with businesses in need of content.,contentconnect.com,writeshop.com,0.5,0.1495348781221221,11,0.7,True
+A meal delivery service featuring locally sourced and organic ingredients.,farmfreshmeals.com,organicmeal.com,0.5,0.1495348781221221,9,0.7,True
+A platform that connects freelance writers with clients.,wordsmiths.io,writerfinders.com,0.0,0.0,12,0.4,True
+An online marketplace for handmade jewelry and accessories.,artisancrafts.com,handmadejewelry.com,0.5,0.1495348781221221,14,0.4,True
+An online marketplace for handmade artisanal products.,handmade.com,handmadehut.com,0.5,0.1495348781221221,3,0.7,True
+A platform for booking eco-friendly accommodations and activities in sustainable destinations.,sustainabletravel.com,greenescapes.com,0.5,0.1495348781221221,13,0.4,True
+A fitness studio that offers outdoor classes in natural settings.,wildfit.com,outdoor.fit,0.0,0.0,9,0.5,False
+A platform that connects farmers with local restaurants.,farmersmarket.com,farm-to-table.com,0.3333333333333333,0.1495348781221221,8,0.4,True
+A website that provides personalized nutrition plans and meal delivery.,healthyshelf.com,healthyliving.com,0.5,0.1495348781221221,6,0.4,True
+A meal delivery service that specializes in vegan and gluten-free options.,veganplatter.com,veganfood.com,0.5,0.1495348781221221,7,0.7,True
+A mobile app that helps people find the best deals on flights and hotels.,travelsavvy.app,deals.com,0.0,0.0,11,0.7,True
+"A subscription box service that delivers curated gifts and products to people's homes, including unique and locally-made items.",boxofjoy.com,giftbox.co,0.0,0.0,8,0.7,True
+A social media platform for pet lovers.,petlovers.com,petpals.com,0.5,0.1495348781221221,5,0.7,True
+"A meal delivery service that offers healthy, organic meals.",healthysnack.com,healthymeal.com,0.5,0.1495348781221221,4,0.7,True
+A social media management tool for businesses of all sizes.,socialmediamanager.com,manageit.com,0.5,0.1495348781221221,13,0.7,True
+An online marketplace for handmade jewelry and accessories.,handmadejewelry.com,jewelrybox.com,0.5,0.1495348781221221,11,0.7,True
+A social networking site for book lovers.,readers.com,bookworms.com,0.5,0.1495348781221221,7,0.7,True
+An online marketplace for handmade jewelry and accessories.,handmadehoopla.com,handmadejewelry.com,0.5,0.1495348781221221,6,0.4,True
+A new platform for booking local home-cooked meals.,homecook.com,homecooki.com,0.5,0.1495348781221221,1,0.5,True
+A service that connects pet owners with local dog walkers.,pawwalker.com,walkmydog.com,0.5,0.1495348781221221,8,0.7,True
+A service that helps people find affordable and high-quality furniture.,furni.com,furnishit.com,0.5,0.1495348781221221,4,0.7,True
+A social media platform for pet lovers to share pictures and stories.,petpals.com,petshare.com,0.5,0.1495348781221221,4,0.7,True

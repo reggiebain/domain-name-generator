@@ -1,6 +1,6 @@
 # Large data files
-data/
-models/
+#data/
+#models/
 .env
 # Byte-compiled / optimized / DLL files
 __pycache__/

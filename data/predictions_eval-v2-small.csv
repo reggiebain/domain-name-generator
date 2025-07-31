@@ -1,0 +1,21 @@
+description,true,pred,rougeL,bleu,levenshtein,brandability,is_valid_domain
+"A subscription box service for unique, handmade jewelry.",handmadebox.com<|eot_id|>,handmadejewelrybox.com,0.3333333333333333,0.0,16,0.4,True
+A subscription service for healthy meal delivery.,freshmeal.com<|eot_id|>,healthymeal.com,0.3333333333333333,0.0,16,0.7,True
+"An online store that sells handmade, one-of-a-kind jewelry.",jewelryzone.com<|eot_id|>,uniquejewelry.com,0.3333333333333333,0.0,20,0.4,True
+A meal delivery service that specializes in plant-based cuisine.,vegetarianeats.com<|eot_id|>,plant-basedfood.com,0.28571428571428575,0.0,23,0.4,True
+A platform for renting out vacation homes and properties.,vacationhomerentals.com<|eot_id|>,vacationhomes.com,0.3333333333333333,0.0,16,0.4,True
+A website that offers personalized workout plans and nutrition advice.,fitandfuel.com<|eot_id|>,www.workoutpal.com,0.28571428571428575,0.0,22,0.4,False
+An online platform for connecting freelancers with potential clients.,skillstar.com<|eot_id|>,freelancers.com,0.3333333333333333,0.0,19,0.7,True
+A platform for pet sitters and dog walkers.,petsitting.com<|eot_id|>,pet-care.com,0.28571428571428575,0.0,17,0.7,True
+A social media management tool that helps businesses improve their online presence.,socialmanager.com<|eot_id|>,[www.yourbusiness.com](http://www.yourbusiness.com),0.18181818181818182,0.0,44,0.4,False
+A platform that allows freelancers to connect with clients and book projects.,freelancehub.com<|eot_id|>,freelancers.net,0.0,0.0,14,0.7,True
+An online marketplace for sustainable fashion.,greenfashion.com<|eot_id|>,sustainablefashion.com,0.3333333333333333,0.0,20,0.4,True
+A platform for connecting freelancers with businesses in need of their services.,freelancers.com<|eot_id|>,freelancers.com,0.6666666666666666,0.1495348781221221,10,0.7,True
+A virtual fashion consultation service for plus-size women.,plusstyle.com<|eot_id|>,"plusizefashionconsult.com -> Website: plusizefashionconsult.com -> Tagline: """,0.2,0.0,63,0.4,False
+An online platform for booking eco-friendly lodging accommodations.,greenresorts.com<|eot_id|>,[www.ecofriendlylodgings.com](http://www.ecofriendlylodgings.com),0.18181818181818182,0.0,52,0.4,False
+A fitness app that offers personalized workout plans and nutrition advice.,fitme.com<|eot_id|>,fitnessapp.net,0.0,0.0,14,0.7,True
+A tutoring service for students of all ages.,studying.io<|eot_id|>,tutor.com,0.0,0.0,17,0.7,True
+A mobile app that helps people find local fitness classes and trainers.,fitfinder.app<|eot_id|>,fitnessfinder.com,0.0,0.0,16,0.4,True
+A platform that connects freelance writers with clients.,wordsmith.io<|eot_id|>,writerconnection.com,0.0,0.0,17,0.4,True
+A platform for connecting freelance writers with potential clients.,writeoncall.com<|eot_id|>,freelancewriters.com,0.3333333333333333,0.0,21,0.4,True
+"A personalized meal delivery service that offers healthy, customizable meals.",mealprep.com<|eot_id|>,mealify.com,0.3333333333333333,0.0,14,0.7,True
