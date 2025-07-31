@@ -3,6 +3,9 @@
 
 Author: Reggie Bain
 
+## 0. Kaggle Dataset
+- I made use of Kaggle datasets/notebooks to use free-tier GPUs and local models. [The full dataset I created can be found here.](https://www.kaggle.com/datasets/reggiebain/domain-name-generator)
+
 
 ## 1. Methodology
 ### Synthetic Data Generation
