@@ -121,8 +121,9 @@ Author: Reggie Bain
     - [Run the Synthetic Data Generation Notebook](./synthetic_data_generation.ipynb)
     - [Run the Fine Tune LLM Notebook](./fine_tune_llm.ipynb)
         - At this point, it will output a fine tuned model (which is too large to upload to GitHub). *Note:* The LoRA adaptation weights can be uploaded but you also need the base model which is >1GB.
-    - [Run the LLM as Judge Notebook](./llm_as_judge.ipynb) 
-- *Note:* I ran into hardware issues running Llama/PyTorch 2.4 on an Intel Mac: [see this post](https://github.com/QwenLM/Qwen2.5-VL/issues/12) and  and [this article](https://discuss.pytorch.org/t/why-no-macosx-x86-64-build-after-torch-2-2-2-cp39-none-macosx-10-9-x86-64-whl/204546/2)
+    - [Run the LLM as Judge Notebook](./llm_as_judge.ipynb) to produce table of feedback
+    - *Optional:* [Run the testing notebook](./model-testing/model-testing-inappropriate.ipynb) to try custom examples OR use the API.
+- *Note:* I ran into hardware issues running Llama/PyTorch 2.4 on an Intel Mac: [see this post](https://github.com/QwenLM/Qwen2.5-VL/issues/12) and  and [this article](https://discuss.pytorch.org/t/why-no-macosx-x86-64-build-after-torch-2-2-2-cp39-none-macosx-10-9-x86-64-whl/204546/2). Thus, I ran testing on Kaggle using my Kaggle dataset.
 
 #### Tips for API Use
 ```
@@ -131,7 +132,8 @@ make run     # start the FastAPI server on LocalHost:8000
 make test      # run edge case test script
 ```
 ## 6. Future Improvements
-- Reinforcement Learning with Human Feedback (RLHF): do a layer of fine tuning where you show the model safe/unsafe prompts and use a reward model that trains the LLM to prefer safe outputs only.
+- **Reinforcement Learning with Human Feedback (RLHF)**: do a layer of fine tuning where you show the model safe/unsafe prompts and use a reward model that trains the LLM to prefer safe outputs only.
+- **Full Hyperparameter Grid Search:** Although we experimented with number of epochs and learning rate, we did not perform a full hyperparameter tuning search, in part due to limitations on free-tier GPU use.
 - Run with more RAM/storage so as to allow full fine tuning of larger Llama model. Although I tried to implement a full fine tuning using Kaggle GPUs, I faced consistent compute/storage limitations. 
 - Use larger LLM to generate more robust set of unsafe business descriptions to teach model how to recognize unsafe outputs without keyword-tagging.
-- Impelement API and containerize using Docker to deploy at scale
+- Impelement API and containerize using Docker to deploy at scale.
